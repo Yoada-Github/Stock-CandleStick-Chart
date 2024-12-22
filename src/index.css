@@ -1,0 +1,155 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(34, 166, 186);
+  height: fit-content;
+  max-height: 100vh;
+}
+
+/* Chart Layout */
+.chart-container {
+  position: relative;
+  width: 100%;
+  height: 85vh; /* Adjusted height to accommodate buttons above */
+  margin-top: 20px; /* Space between buttons and chart */
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: black;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons Layout */
+.support-resistance-manager {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 10px;
+
+}
+
+.timeframe-selector {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 5px;
+}
+
+/* Support/Resistance Buttons */
+.support-resistance-manager button {
+  font-size: 10px;
+  margin-left: 10px; /* Add spacing between buttons */
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.support-resistance-manager button:hover {
+  background-color: lightblue;
+  color: #000000;
+}
+
+.support-resistance-manager button:active {
+  transform: scale(0.80);
+}
+
+/* Timeframe Buttons */
+.timeframe-selector button {
+  margin-left: 10px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+
+.timeframe-selector button:hover {
+  color: #0621f0;
+  background-color: #000000;
+}
+
+.line-label {
+  font-size: 12px;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 4px 6px;
+  border-radius: 4px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.support-line {
+  border-top: 1px solid #2ecc71;
+}
+
+.resistance-line {
+  border-top: 1px solid #e74c3c;
+}
+.d-flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+
+/* Add this CSS in your styles file or within a <style> block */
+.tooltip-container {
+  position: absolute;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 14px;
+  z-index: 1000;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: row;
+}
+
+.tooltip-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  padding-left: 5px;
+}
+
+.tooltip-row:last-child {
+  margin-bottom: 0;
+}
+
+.tooltip-label {
+  font-weight: 800;
+  color: white; /* Lighter text for labels */
+}
+
+.tooltip-value {
+  color:rgb(36, 167, 36); /* Bright white for values */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .chart-container {
+    height: 100vh;
+  }
+
+  .button-row {
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: flex-start;
+  }
+  .support-resistance-manager button {
+    font-size: 12px;
+    padding: 4px 10px;
+    margin: 5px 1px;
+  }
+  .timeframe-selector button{
+    font-size: 15px;
+    
+  }
+}
